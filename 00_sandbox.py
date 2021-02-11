@@ -1,2 +1,1 @@
-get_name = input("Wait a minute! Who are you!? ")
-print(get_name + "no")
+print("kusgfjdsvjbhxcvwbfsucvwebehhsdvhadgbrejfgudvjnegvuyvgfdnbnrhdfvnfdavieravbgjhdafhvbdahgiudv davidfvbdfbjdn hdghdfjv fgbfd bhjbvrg vhfjgu43tgja5qopfhn reakfodsuhgsh5tb  hergshzdlgeaghsb flghalhgjdfsg sdfhgdf kghg fsidl g iugia")
