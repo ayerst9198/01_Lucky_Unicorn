@@ -1,1 +1,6 @@
-print("kusgfjdsvjbhxcvwbfsucvwebehhsdvhadgbrejfgudvjnegvuyvgfdnbnrhdfvnfdavieravbgjhdafhvbdahgiudv davidfvbdfbjdn hdghdfjv fgbfd bhjbvrg vhfjgu43tgja5qopfhn reakfodsuhgsh5tb  hergshzdlgeaghsb flghalhgjdfsg sdfhgdf kghg fsidl g iugia")
+name = input("what is your name")
+
+if name == "Ryan" or name == "ryan":
+    print("That name sucks")
+else:
+    print("Wow cool name!")
