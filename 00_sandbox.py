@@ -1,9 +1,10 @@
-for i in range(1, 101):
-    if i % 3 == 0 and i % 5 == 0:
-        print("FizzBuzz")
-    elif i % 3 == 0:
-        print("Fizz")
-    elif i % 5 == 0:
-        print("Buzz")
-    else:
-        print(i)
+greeting = "Your Saviour Is here! - Loki 2017"
+sides = "|" * 3
+
+greeting = "{} {} {}".format(sides, greeting, sides)
+
+top_bottom = "=" * len(greeting)
+
+print(top_bottom)
+print(greeting)
+print(top_bottom)

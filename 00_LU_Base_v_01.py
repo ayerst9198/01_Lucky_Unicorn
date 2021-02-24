@@ -16,15 +16,33 @@ def yes_no(question):
             return response
 
         else:
-            print("<error> Unknown Answer "
-                  "Detected. Please Input Yes/No")
+            print("I don't understand. "
+                  "Stop acting smart and just input Yes or No")
+
+
+def cont():
+    input("Enter anything to continue the Game :D")
 
 
 def instructions():
     print("***How to Play***")
     print()
-    print("The rules go here")
+    print("Welcome to Lucky Unicorns")
     print()
+    print("The aim of the game is to make as much money as possible")
+    print()
+    print("A random token will be generated from a unicorn, horse, donkey, or zebra:")
+    print()
+    print("Unicorns are worth $4.")
+    print("If you get a Zebra or a Horse, you lose $0.50")
+    print("Watch out for Donkeys!")
+    print("If you get a Donkey, you lose $1!")
+    print()
+    print("When you run out of money; YOU LOSE")
+    print()
+    print("Enjoy!")
+    print()
+    cont()
     return ""
 
 
@@ -106,9 +124,11 @@ while play_again == "":
         print("Sincere apologies kind sir,"
               " but you are stone broke. "
               "Come back when you can afford it :D")
+    elif:
+
     else:
         play_again = input("Press <Enter> to play again "
                            "or 'xxx' to quit ")
 
 print()
-print("Final Balance: ", balance)
+print("Final Balance: ${}".format(balance))
