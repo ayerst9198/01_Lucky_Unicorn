@@ -33,11 +33,11 @@ greeting = "{} {} {}".format(sides, greeting, sides)
 
 top_bottom = "=" * len(greeting)
 
-top_bottom_unicorn = "*" * len()
+top_bottom_unicorn = "*" * 50
 
-top_bottom_horse = "="
+top_bottom_horse = "=" * 46
 
-top_bottom_donkey = "_"
+top_bottom_donkey = "-" * 47
 
 
 def instructions():
