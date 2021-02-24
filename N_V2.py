@@ -1,1 +1,1 @@
-Have you played this game before? yes
+print("no")

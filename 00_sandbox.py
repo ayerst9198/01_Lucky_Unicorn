@@ -8,3 +8,7 @@ top_bottom = "=" * len(greeting)
 print(top_bottom)
 print(greeting)
 print(top_bottom)
+
+
+print("You got a {}. Your balance is "
+          "${:.2f}".format(chosen, balance))

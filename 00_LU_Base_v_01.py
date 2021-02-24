@@ -23,13 +23,38 @@ def yes_no(question):
 def cont():
     input("Enter anything to continue the Game :D")
 
+greeting = "Welcome to Lucky Unicorns :D"
+
+sides = "|" * 3
+
+sides_unicorn = "*" * 3
+
+greeting = "{} {} {}".format(sides, greeting, sides)
+
+top_bottom = "=" * len(greeting)
+
+top_bottom_unicorn = "*" * len()
+
+top_bottom_horse = "="
+
+top_bottom_donkey = "_"
+
 
 def instructions():
     print("***How to Play***")
     print()
-    print("Welcome to Lucky Unicorns")
+    print(top_bottom)
+    print(greeting)
+    print(top_bottom)
     print()
-    print("The aim of the game is to make as much money as possible")
+    print("The aim of the game is to make as much money as possible!")
+    print()
+    print("I  know what you're thinking")
+    print("'This is rigged isn't it.'")
+    print("But NO!")
+    print("This is 100% NOT rigged")
+    print("We could probably call this the 'I CAN'T BELIEVE IT'S NOT RIGGED GAME!',")
+    print("because that's how not rigged it is.")
     print()
     print("A random token will be generated from a unicorn, horse, donkey, or zebra:")
     print()
@@ -37,10 +62,13 @@ def instructions():
     print("If you get a Zebra or a Horse, you lose $0.50")
     print("Watch out for Donkeys!")
     print("If you get a Donkey, you lose $1!")
+    print("This is to show you how not rigged this is")
     print()
     print("When you run out of money; YOU LOSE")
+    print("Because this is not rigged!")
     print()
     print("Enjoy!")
+    print("Because it's definitely not rigged :D")
     print()
     cont()
     return ""
@@ -79,7 +107,7 @@ how_much = num_check("How much would you "
 balance = how_much
 
 rounds_played = 0
-
+print("What a good amount of money to play this not rigged game with.")
 play_again = input("Please press <Enter> to play... ").lower()
 while play_again == "":
 
@@ -115,17 +143,32 @@ while play_again == "":
             chosen = "zebra"
         balance -= 0.5
 
-    print("You got a {}. Your balance is "
-          "${:.2f}".format(chosen, balance))
-    print()
+    if chosen == "unicorn":
+        print(top_bottom_unicorn)
+        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
+        print(top_bottom_unicorn)
+        print()
+    elif chosen == "horse" or chosen == "zebra":
+        print(top_bottom_horse)
+        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
+        print(top_bottom_horse)
+        print()
+    elif chosen == "donkey":
+        print(top_bottom_donkey)
+        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
+        print(top_bottom_donkey)
+        print()
+    else:
+        play_again = "xxx"
+        print("You have somehow broken my game.")
+        print("This is an error message and the game will now shut down.")
 
     if balance < 1:
         play_again = "xxx"
         print("Sincere apologies kind sir,"
               " but you are stone broke. "
               "Come back when you can afford it :D")
-    elif:
-
+        print("Still not rigged.")
     else:
         play_again = input("Press <Enter> to play again "
                            "or 'xxx' to quit ")
