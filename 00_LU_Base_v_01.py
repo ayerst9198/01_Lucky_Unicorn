@@ -2,6 +2,19 @@ import random
 
 
 # functions go here
+def statement_generator(statement, decoration):
+    sides = decoration * 3
+
+    statement = "{} {} {}".format(sides, statement, sides)
+    top_bottom = decoration * len(statement)
+
+    print(top_bottom)
+    print(statement)
+    print(top_bottom)
+
+    return ""
+
+
 def yes_no(question):
     valid = False
     while not valid:
@@ -23,29 +36,9 @@ def yes_no(question):
 def cont():
     input("Enter anything to continue the Game :D")
 
-greeting = "Welcome to Lucky Unicorns :D"
-
-sides = "|" * 3
-
-sides_unicorn = "*" * 3
-
-greeting = "{} {} {}".format(sides, greeting, sides)
-
-top_bottom = "=" * len(greeting)
-
-top_bottom_unicorn = "*" * 50
-
-top_bottom_horse = "=" * 46
-
-top_bottom_donkey = "-" * 47
-
 
 def instructions():
-    print("***How to Play***")
-    print()
-    print(top_bottom)
-    print(greeting)
-    print(top_bottom)
+    statement_generator("How to Play", "*")
     print()
     print("The aim of the game is to make as much money as possible!")
     print()
@@ -94,6 +87,9 @@ def num_check(question, low, high):
 
 
 # Main routine goes here...
+statement_generator("Welcome to the Lucky Unicorn Game", "*")
+print()
+
 show_instructions = yes_no("Have you played my "
                            "game before? ")
 
@@ -101,6 +97,7 @@ if show_instructions == "no":
     instructions()
 
 # Ask user how much they want to play with...
+statement_generator("START", "+")
 print()
 how_much = num_check("How much would you "
                      "like to play with? ", 0, 10)
@@ -116,20 +113,23 @@ while play_again == "":
 
     # print round number
     print()
-    print("*** Round #{} ***".format(rounds_played))
+    statement_generator("Round #{}".format(rounds_played), "*")
     chosen_num = random.randint(1, 100)
 
     # Adjust balance
+
     # if the random # is between 1 and 5,
     # user gets a unicorn (add $4 to the balance)
     if 1 <= chosen_num <= 5:
         chosen = "unicorn"
         balance += 4
+
     # if the random # is between 6 and 36,
     # user gets a donkey (subtract $1 from balance)
     elif 6 <= chosen_num <= 36:
         chosen = "donkey"
         balance -= 1
+
     # token is either horse or zebra...
     # either way subtract $0.5 from balance
     else:
@@ -144,19 +144,16 @@ while play_again == "":
         balance -= 0.5
 
     if chosen == "unicorn":
-        print(top_bottom_unicorn)
-        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
-        print(top_bottom_unicorn)
+        statement_generator("You got a UNICORN!", "!")
         print()
-    elif chosen == "horse" or chosen == "zebra":
-        print(top_bottom_horse)
-        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
-        print(top_bottom_horse)
+    elif chosen == "horse":
+        statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "-")
+        print()
+    elif chosen == "zebra":
+        statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "%")
         print()
     elif chosen == "donkey":
-        print(top_bottom_donkey)
-        print("{} You got a {}. Your balance is ${:.2f} {}".format(sides, chosen, balance, sides))
-        print(top_bottom_donkey)
+        statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "^")
         print()
     else:
         play_again = "xxx"
@@ -174,4 +171,6 @@ while play_again == "":
                            "or 'xxx' to quit ")
 
 print()
-print("Final Balance: ${}".format(balance))
+statement_generator("Results", "=")
+statement_generator("Final Balance: ${}".format(balance), ".")
+print("Thank you for playing")
