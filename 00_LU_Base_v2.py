@@ -50,13 +50,10 @@ def instructions():
     print("If you get a Zebra or a Horse, you lose $0.50")
     print("Watch out for Donkeys!")
     print("If you get a Donkey, you lose $1!")
-    print("This is to show you how not rigged this is")
     print()
     print("When you run out of money; YOU LOSE")
-    print("Because this is not rigged!")
     print()
     print("Enjoy!")
-    print("Because it's definitely not rigged :D")
     print()
     cont()
     return ""
@@ -85,7 +82,7 @@ def num_check(question, low, high):
 statement_generator("Welcome to the Lucky Unicorn Game", "*")
 print()
 
-show_instructions = yes_no("Have you played my "
+show_instructions = yes_no("Have you played this "
                            "game before? ")
 
 if show_instructions == "no":
@@ -95,11 +92,10 @@ if show_instructions == "no":
 statement_generator("START", "+")
 print()
 how_much = num_check("How much would you "
-                     "like to play with? ", 0, 10)
+                     "like to play with between $1 and $10? ", 0, 10)
 balance = how_much
 
 rounds_played = 0
-print("What a good amount of money to play this not rigged game with.")
 play_again = input("Please press <Enter> to play... ").lower()
 while play_again == "":
 
@@ -140,7 +136,7 @@ while play_again == "":
         balance -= 0.5
 
     if chosen == "unicorn":
-        statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "-")
+        statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "$")
         print()
     elif chosen == "horse":
         statement_generator("You got a {}. Your balance is ${:.2f}".format(chosen, balance), "-")
@@ -158,15 +154,13 @@ while play_again == "":
 
     if balance < 1:
         play_again = "xxx"
-        print("Sincere apologies kind sir,"
-              " but you are stone broke. "
-              "Come back when you can afford it :D")
-        print("Still not rigged.")
+        print("You have run out of money.")
+        print(statement_generator("Game Over", "'"))
     else:
         play_again = input("Press <Enter> to play again "
                            "or 'xxx' to quit ")
 
 print()
-statement_generator("Results", "=")
+statement_generator("Final Results", "=")
 statement_generator("Final Balance: ${}".format(balance), ".")
 print("Thank you for playing")
